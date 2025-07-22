@@ -125,7 +125,7 @@ function initIntersectionObserver() {
     }, observerOptions);
 
     // Observe animated elements
-    document.querySelectorAll('.intro-section, .skills-section, .social-section, .team-section, .feedback-section').forEach(el => {
+    document.querySelectorAll('.intro-section, .skills-section, .social-section, .team-section, .feedback-section, .youtube-section').forEach(el => {
         observer.observe(el);
     });
 }
@@ -158,10 +158,11 @@ function addHoverEffects() {
     const socialLinks = document.querySelectorAll('.social-link');
     const skillItems = document.querySelectorAll('.skill-item');
     const teamMembers = document.querySelectorAll('.team-member');
+    const videoContainers = document.querySelectorAll('.video-container');
     
-    [...socialLinks, ...skillItems, ...teamMembers].forEach(element => {
+    [...socialLinks, ...skillItems, ...teamMembers, ...videoContainers].forEach(element => {
         element.addEventListener('mouseenter', function() {
-            if (element.classList.contains('team-member')) {
+            if (element.classList.contains('team-member') || element.classList.contains('video-container')) {
                 this.style.transform = 'translateY(-8px)';
             } else {
                 this.style.transform = 'translateY(-8px) scale(1.02)';
