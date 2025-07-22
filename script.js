@@ -65,7 +65,7 @@ class ParticleSystem {
             particle.element.style.top = particle.y + 'px';
         });
         
-        requestAnimationFrame(() => this.animate());
+        requestAnimationFrame(function() { this.animate(); }.bind(this));
     }
 
     // Clean up particles on window resize
@@ -116,8 +116,8 @@ function initIntersectionObserver() {
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 entry.target.style.animationPlayState = 'running';
             }
@@ -160,7 +160,8 @@ function addHoverEffects() {
     const teamMembers = document.querySelectorAll('.team-member');
     const videoContainers = document.querySelectorAll('.video-container');
     
-    [...socialLinks, ...skillItems, ...teamMembers, ...videoContainers].forEach(element => {
+    const allElements = [].concat(socialLinks, skillItems, teamMembers, videoContainers);
+    allElements.forEach(element => {
         element.addEventListener('mouseenter', function() {
             if (element.classList.contains('team-member') || element.classList.contains('video-container')) {
                 this.style.transform = 'translateY(-8px)';
@@ -191,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addHoverEffects();
     
     // Handle window resize
-    const debouncedResize = debounce(() => {
+    const debouncedResize = debounce(function() {
         particleSystem.resize();
     }, 250);
     
@@ -201,7 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.body.style.opacity = '0';
     document.body.style.transition = 'opacity 0.5s ease-in-out';
     
-    setTimeout(() => {
+    setTimeout(function() {
         document.body.style.opacity = '1';
     }, 100);
 });
@@ -225,7 +226,7 @@ document.addEventListener('focusout', function(e) {
 class FeedbackSystem {
     constructor() {
         this.currentRating = 0;
-        this.webhookUrl = 'https://discord.com/api/webhooks/1396902139506196490/JiKr8_Gjd_a00DtaMQfThItYaY0g2oB0uKQpOXayViZEA7g-mrF4hb7tljh1Nw2ZD12v'; // Replace with actual webhook URL
+        this.webhookUrl = ''; // Replace with actual webhook URL
         this.init();
     }
 
@@ -237,26 +238,38 @@ class FeedbackSystem {
     bindEvents() {
         // Star rating events
         const stars = document.querySelectorAll('.star');
-        stars.forEach(star => {
-            star.addEventListener('click', () => this.setRating(parseInt(star.dataset.rating)));
-            star.addEventListener('mouseenter', () => this.highlightStars(parseInt(star.dataset.rating)));
-        });
+        stars.forEach(function(star) {
+            star.addEventListener('click', function() { 
+                this.setRating(parseInt(star.dataset.rating)); 
+            }.bind(this));
+            star.addEventListener('mouseenter', function() { 
+                this.highlightStars(parseInt(star.dataset.rating)); 
+            }.bind(this));
+        }.bind(this));
 
         // Star container mouse leave
         const starRating = document.getElementById('starRating');
-        starRating.addEventListener('mouseleave', () => this.highlightStars(this.currentRating));
+        starRating.addEventListener('mouseleave', function() { 
+            this.highlightStars(this.currentRating); 
+        }.bind(this));
 
         // Comment character count
         const commentTextarea = document.getElementById('feedbackComment');
-        commentTextarea.addEventListener('input', () => this.updateCharacterCount());
+        commentTextarea.addEventListener('input', function() { 
+            this.updateCharacterCount(); 
+        }.bind(this));
 
         // Submit button
         const submitBtn = document.getElementById('submitFeedback');
-        submitBtn.addEventListener('click', () => this.submitFeedback());
+        submitBtn.addEventListener('click', function() { 
+            this.submitFeedback(); 
+        }.bind(this));
 
         // Clear button
         const clearBtn = document.getElementById('clearFeedback');
-        clearBtn.addEventListener('click', () => this.clearFeedback());
+        clearBtn.addEventListener('click', function() { 
+            this.clearFeedback(); 
+        }.bind(this));
     }
 
     setRating(rating) {
@@ -320,7 +333,7 @@ class FeedbackSystem {
         this.hideStatus();
     }
 
-    async submitFeedback() {
+    submitFeedback() {
         const comment = document.getElementById('feedbackComment').value.trim();
         const timestamp = new Date().toLocaleString();
         
@@ -354,28 +367,26 @@ class FeedbackSystem {
             embeds: [embed]
         };
 
-        try {
-            const response = await fetch(this.webhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(webhookData)
-            });
-
+        fetch(this.webhookUrl, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(webhookData)
+        }).then(function(response) {
             if (response.ok) {
                 this.showStatus('✅ Thank you for your feedback!', 'success');
                 // Clear form after successful submission
-                setTimeout(() => {
+                setTimeout(function() {
                     this.clearFeedback();
-                }, 3000);
+                }.bind(this), 3000);
             } else {
                 throw new Error('Failed to send feedback');
             }
-        } catch (error) {
+        }.bind(this)).catch(function(error) {
             console.error('Error sending feedback:', error);
             this.showStatus('❌ Failed to send feedback. Please try again.', 'error');
-        }
+        }.bind(this));
     }
 
     getRatingColor(rating) {
