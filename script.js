@@ -226,7 +226,7 @@ document.addEventListener('focusout', function(e) {
 class FeedbackSystem {
     constructor() {
         this.currentRating = 0;
-        this.webhookUrl = ''; // Replace with actual webhook URL
+        this.webhookUrl = 'https://discord.com/api/webhooks/1396902139506196490/JiKr8_Gjd_a00DtaMQfThItYaY0g2oB0uKQpOXayViZEA7g-mrF4hb7tljh1Nw2ZD12v'; // Replace with actual webhook URL
         this.init();
     }
 
