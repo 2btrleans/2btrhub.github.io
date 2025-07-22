@@ -1,0 +1,894 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: linear-gradient(135deg, #0f1419 0%, #1a1a2e 50%, #16213e 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Turkish Flag */
+.turkish-flag {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: fadeInRight 1.5s ease-out;
+}
+
+.flag-container {
+    width: 80px;
+    height: 53px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: flagWave 3s ease-in-out infinite;
+}
+
+.flag-container:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(227, 10, 23, 0.4);
+}
+
+.flag-svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.flag-svg g {
+    animation: starTwinkle 2s ease-in-out infinite alternate;
+}
+
+.flag-svg circle:first-of-type {
+    animation: crescentGlow 4s ease-in-out infinite;
+}
+
+/* Header Styles */
+.header {
+    text-align: center;
+    padding: 60px 0 40px;
+    animation: fadeInDown 1s ease-out;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.roblox-logo {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #00a2ff, #0085ff);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 162, 255, 0.3);
+    animation: float 3s ease-in-out infinite;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #00a2ff, #ffffff, #0085ff);
+    background-size: 200% 200%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #b0b8c8;
+    font-weight: 400;
+    margin-top: 10px;
+}
+
+/* Main Content */
+.main-content {
+    padding: 20px 0 60px;
+}
+
+/* Intro Section */
+.intro-section {
+    text-align: center;
+    margin-bottom: 60px;
+    animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: #b0b8c8;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* Skills Section */
+.skills-section {
+    margin-bottom: 80px;
+    animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.skills-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #ffffff;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.skill-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.skill-item:hover {
+    background: rgba(0, 162, 255, 0.1);
+    border-color: rgba(0, 162, 255, 0.3);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 162, 255, 0.2);
+}
+
+.skill-item i {
+    font-size: 2rem;
+    color: #00a2ff;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.skill-item span {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* Social Section */
+.social-section {
+    animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+.social-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.social-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 25px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+.social-link:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* YouTube specific styling */
+.social-link.youtube:hover {
+    background: rgba(255, 0, 0, 0.1);
+    border-color: rgba(255, 0, 0, 0.3);
+    box-shadow: 0 15px 40px rgba(255, 0, 0, 0.2);
+}
+
+.social-link.youtube .social-icon {
+    background: linear-gradient(45deg, #ff0000, #ff4444);
+}
+
+/* Discord specific styling */
+.social-link.discord:hover {
+    background: rgba(114, 137, 218, 0.1);
+    border-color: rgba(114, 137, 218, 0.3);
+    box-shadow: 0 15px 40px rgba(114, 137, 218, 0.2);
+}
+
+.social-link.discord .social-icon {
+    background: linear-gradient(45deg, #7289da, #5865f2);
+}
+
+/* Get Script specific styling */
+.social-link.get-script:hover {
+    background: rgba(0, 255, 127, 0.1);
+    border-color: rgba(0, 255, 127, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 255, 127, 0.2);
+}
+
+.social-link.get-script .social-icon {
+    background: linear-gradient(45deg, #00ff7f, #32cd32);
+}
+
+.social-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+}
+
+.social-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.social-platform {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.social-description {
+    font-size: 0.9rem;
+    color: #b0b8c8;
+    font-weight: 400;
+}
+
+/* Team Section */
+.team-section {
+    margin-bottom: 80px;
+    animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+.team-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.team-member {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+.team-member::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.team-member:hover::before {
+    left: 100%;
+}
+
+.team-member:hover {
+    background: rgba(0, 162, 255, 0.1);
+    border-color: rgba(0, 162, 255, 0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 162, 255, 0.2);
+}
+
+.team-avatar-placeholder {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, #00a2ff, #0085ff);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: white;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 25px rgba(0, 162, 255, 0.3);
+    transition: all 0.3s ease;
+}
+
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 25px rgba(0, 162, 255, 0.3);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: linear-gradient(45deg, #00a2ff, #0085ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.team-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.team-member:hover .team-avatar-placeholder,
+.team-member:hover .team-avatar {
+    transform: scale(1.1);
+    box-shadow: 0 12px 35px rgba(0, 162, 255, 0.4);
+}
+
+.team-info {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.team-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+}
+
+.team-role {
+    font-size: 1rem;
+    color: #b0b8c8;
+    font-weight: 400;
+    margin: 0;
+}
+
+/* Feedback Section */
+.feedback-section {
+    margin-bottom: 80px;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.feedback-title {
+    font-size: 2rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 50px;
+    color: #ffffff;
+}
+
+.feedback-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 40px;
+    backdrop-filter: blur(10px);
+}
+
+.rating-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.rating-label {
+    font-size: 1.1rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.star {
+    font-size: 2rem;
+    color: #4a5568;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+}
+
+.star:hover,
+.star.active {
+    color: #ffd700;
+    transform: scale(1.1);
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.star.active {
+    animation: starPulse 0.3s ease;
+}
+
+.rating-text {
+    font-size: 0.9rem;
+    color: #b0b8c8;
+    margin: 0;
+}
+
+.comment-container {
+    margin-bottom: 30px;
+}
+
+.comment-label {
+    display: block;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.comment-textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 15px;
+    color: #ffffff;
+    font-family: inherit;
+    font-size: 0.95rem;
+    resize: vertical;
+    min-height: 100px;
+    transition: all 0.3s ease;
+}
+
+.comment-textarea:focus {
+    outline: none;
+    border-color: #00a2ff;
+    box-shadow: 0 0 0 2px rgba(0, 162, 255, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.comment-textarea::placeholder {
+    color: #888;
+}
+
+.character-count {
+    text-align: right;
+    margin-top: 5px;
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.feedback-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.submit-btn,
+.clear-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-btn {
+    background: linear-gradient(45deg, #00a2ff, #0085ff);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0, 162, 255, 0.3);
+}
+
+.submit-btn:hover:not(:disabled) {
+    background: linear-gradient(45deg, #0085ff, #006bb3);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 162, 255, 0.4);
+}
+
+.submit-btn:disabled {
+    background: #4a5568;
+    color: #888;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.clear-btn {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.clear-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+}
+
+.feedback-status {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.feedback-status.success {
+    background: rgba(72, 187, 120, 0.2);
+    color: #68d391;
+    border: 1px solid rgba(72, 187, 120, 0.3);
+    opacity: 1;
+}
+
+.feedback-status.error {
+    background: rgba(245, 101, 101, 0.2);
+    color: #fc8181;
+    border: 1px solid rgba(245, 101, 101, 0.3);
+    opacity: 1;
+}
+
+.feedback-status.loading {
+    background: rgba(0, 162, 255, 0.2);
+    color: #63b3ed;
+    border: 1px solid rgba(0, 162, 255, 0.3);
+    opacity: 1;
+}
+
+/* Star pulse animation */
+@keyframes starPulse {
+    0% { transform: scale(1.1); }
+    50% { transform: scale(1.3); }
+    100% { transform: scale(1.1); }
+}
+
+/* Turkish Flag Animations */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes flagWave {
+    0%, 100% {
+        transform: rotate(-2deg);
+    }
+    50% {
+        transform: rotate(2deg);
+    }
+}
+
+@keyframes starTwinkle {
+    0% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+}
+
+@keyframes crescentGlow {
+    0%, 100% {
+        filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+    }
+    50% {
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6));
+    }
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 60px;
+    animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.footer p {
+    color: #b0b8c8;
+    margin-bottom: 10px;
+}
+
+.footer-text {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Particle Background */
+.particles-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: rgba(0, 162, 255, 0.6);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes gradientShift {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .social-title, .skills-title {
+        font-size: 1.8rem;
+    }
+    
+    .logo-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .social-links {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .social-link {
+        padding: 20px;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .team-member {
+        padding: 25px;
+    }
+    
+    .feedback-container {
+        padding: 30px 20px;
+    }
+    
+    .star-rating {
+        gap: 5px;
+    }
+    
+    .star {
+        font-size: 1.8rem;
+    }
+    
+    .feedback-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .submit-btn,
+    .clear-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .turkish-flag {
+        top: 15px;
+        right: 15px;
+    }
+    
+    .flag-container {
+        width: 60px;
+        height: 40px;
+    }
+    
+    .intro-text {
+        font-size: 1rem;
+    }
+    
+    .header {
+        padding: 40px 0 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .social-link {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .roblox-logo {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .social-link {
+        border-width: 2px;
+    }
+    
+    .skill-item {
+        border-width: 2px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
