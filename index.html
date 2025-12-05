@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Professional Roblox scripter portfolio - showcasing custom scripts expertise">
+    <meta name="description" content="Professional Roblox scripter - showcasing custom scripts expertise">
     <meta name="keywords" content="Roblox, scripting, Lua, game development, programming">
     <meta name="author" content="Roblox Scripter">
     
@@ -12,7 +12,7 @@
     <meta property="og:description" content="Professional Roblox scripter showcasing custom scripts and game development expertise">
     <meta property="og:type" content="website">
     
-    <title>Roblox Scripter Base</title>
+    <title>Roblox Scripter Portfolio</title>
     
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -42,26 +42,40 @@
             </div>
         </div>
 
-        <!-- Header Section -->
-        <header class="header">
-            <div class="logo-container">
-                <div class="roblox-logo">
+        <!-- Top Navigation Toggle -->
+        <nav class="section-nav">
+            <div class="nav-toggle">
+                <button class="nav-btn active" data-section="roblox">
                     <i class="fas fa-cube"></i>
-                </div>
-                <h1 class="title">Roblox Scripter</h1>
+                    <span>Roblox</span>
+                </button>
+                <button class="nav-btn" data-section="minecraft">
+                    <i class="fas fa-gamepad"></i>
+                    <span>Minecraft</span>
+                </button>
             </div>
-            <p class="subtitle">Lua Developer</p>
-        </header>
+        </nav>
 
-        <!-- Main Content -->
-        <main class="main-content">
+        <!-- ROBLOX SECTION -->
+        <section class="page-section roblox-section active" id="robloxSection">
+            <!-- Header Section -->
+            <header class="header">
+                <div class="logo-container">
+                    <div class="roblox-logo">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h1 class="title">Roblox Scripter</h1>
+                </div>
+                <p class="subtitle">Lua Developer</p>
+            </header>
+
+            <!-- Main Content -->
+            <main class="main-content">
             <section class="intro-section">
                 <h2 class="section-title">Welcome to My Website</h2>
                 <p class="intro-text">
                     I'm a passionate Roblox scripter specializing in creating immersive game experiences 
                     through custom Lua scripts, advanced mechanics, and innovative gameplay systems.
-
-                    Script : Skywars, Pilfering Pirates, Doors, Murder Mystery 2, Grow A Garden, Lucky Block Battlegrounds, Specter
                 </p>
             </section>
 
@@ -92,7 +106,7 @@
             <section class="social-section">
                 <h3 class="social-title">Connect With Me</h3>
                 <div class="social-links">
-                    <a href="https://www.youtube.com/@2btr_b4" 
+                    <a href="https://youtube.com" 
                        class="social-link youtube" 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -106,7 +120,7 @@
                         </div>
                     </a>
 
-                    <a href="https://www.discord.com/invite/af5XmBDfHV" 
+                    <a href="https://discord.gg" 
                        class="social-link discord" 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -120,7 +134,7 @@
                         </div>
                     </a>
 
-                    <a href="https://www.discord.com/invite/af5XmBDfHV" 
+                    <a href="https://discord.gg" 
                        class="social-link get-script" 
                        target="_blank" 
                        rel="noopener noreferrer"
@@ -136,55 +150,41 @@
                 </div>
             </section>
 
-<!-- Our Team Section -->
-<section class="team-section">
-    <h3 class="team-title">Our Team</h3>
-    <div class="team-grid">
-        <div class="team-member">
-            <div class="team-avatar">
-                <img src="https://static.readdy.ai/image/4b678bacd71a8abec1f832e392bd6ccb/9299a0c0d73990c5b93b856b34fbf794.webp" alt="2btr profile picture" class="team-avatar-img">
-            </div>
-            <div class="team-info">
-                <h4 class="team-name">2btr</h4>
-                <p class="team-role">Founder of the script</p>
-            </div>
-        </div>
+            <!-- Our Team Section -->
+            <section class="team-section">
+                <h3 class="team-title">Our Team</h3>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="team-avatar">
+                            <img src="https://static.readdy.ai/image/4b678bacd71a8abec1f832e392bd6ccb/9299a0c0d73990c5b93b856b34fbf794.webp" alt="2btr profile picture" class="team-avatar-img">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="team-name">2btr</h4>
+                            <p class="team-role">Founder of the script</p>
+                        </div>
+                    </div>
 
-        <div class="team-member">
-            <div class="team-avatar">
-                <img src="https://static.readdy.ai/image/4b678bacd71a8abec1f832e392bd6ccb/1fc954628332d5832fe49d04eaaffdd1.webp" alt="ShadowBey profile picture" class="team-avatar-img">
-            </div>
-            <div class="team-info">
-                <h4 class="team-name">ShadowBey</h4>
-                <p class="team-role">Helper and Ally</p>
-            </div>
-        </div>
+                    <div class="team-member">
+                        <div class="team-avatar">
+                            <img src="https://static.readdy.ai/image/4b678bacd71a8abec1f832e392bd6ccb/1fc954628332d5832fe49d04eaaffdd1.webp" alt="ShadowBey profile picture" class="team-avatar-img">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="team-name">ShadowBey</h4>
+                            <p class="team-role">Helper and Ally</p>
+                        </div>
+                    </div>
 
-        <div class="team-member">
-            <div class="team-avatar">
-                <img src="https://media.discordapp.net/attachments/1381270869162065961/1396896073645293741/image-19.png?ex=687fc059&is=687e6ed9&hm=4dcf2893db74f1b3206eb149de72b56a2e33eb4a5a5f475f12d6538a6cc47673&=&format=webp&quality=lossless&width=526&height=528" alt="FlexAndFrag profile picture" class="team-avatar-img">
-            </div>
-            <div class="team-info">
-                <h4 class="team-name">FlexAndFrag</h4>
-                <p class="team-role">Who comes up with creative and good ideas</p>
-            </div>
-        </div>
-
-        <!-- ✅ New Member Added: Javen -->
-        <div class="team-member">
-            <div class="team-avatar">
-                <img src="https://cdn.discordapp.com/avatars/1132555062225420318/7f7030a670833aba9f2f02434dd7a5d0.webp?size=60" 
-                     alt="Javen profile picture" 
-                     class="team-avatar-img">
-            </div>
-            <div class="team-info">
-                <h4 class="team-name">Javen</h4>
-                <p class="team-role">Scripter & Creative Collaborator</p>
-            </div>
-        </div>
-    </div>
-</section>
-
+                    <div class="team-member">
+                        <div class="team-avatar">
+                            <img src="https://media.discordapp.net/attachments/1381270869162065961/1396896073645293741/image-19.png?ex=687fc059&is=687e6ed9&hm=4dcf2893db74f1b3206eb149de72b56a2e33eb4a5a5f475f12d6538a6cc47673&=&format=webp&quality=lossless&width=526&height=528" alt="FlexAndFrag profile picture" class="team-avatar-img">
+                        </div>
+                        <div class="team-info">
+                            <h4 class="team-name">FlexAndFrag</h4>
+                            <p class="team-role">Who comes up with creative and good ideas</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Feedback Section -->
             <section class="feedback-section">
@@ -238,23 +238,23 @@
                     <div class="video-container">
                         <div class="video-wrapper">
                             <iframe 
-                                src="https://www.youtube.com/embed/tBrRysn7yfg" 
-                                title="Roblox Skywars (Voxels) Script"
+                                src="https://www.youtube.com/embed/RlCdvVPnrTM" 
+                                title="Roblox Doors Script"
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
                                 allowfullscreen>
                             </iframe>
                         </div>
                         <div class="video-info">
-                            <h4 class="video-title">Roblox Skywars Script</h4>
-                            <p class="video-description">Fly, Speed, and more</p>
+                            <h4 class="video-title">Roblox Doors Script</h4>
+                            <p class="video-description">Bypass AntiCheat And More</p>
                         </div>
                     </div>
 
                     <div class="video-container">
                         <div class="video-wrapper">
                             <iframe 
-                                src="https://www.youtube.com/embed/JSChjC_EQCI" 
+                                src="https://www.youtube.com/embed/OOsFxL1OVa4" 
                                 title="Roblox Scripting Showcase" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -262,15 +262,15 @@
                             </iframe>
                         </div>
                         <div class="video-info">
-                            <h4 class="video-title">Roblox Counter Blox Script</h4>
-                            <p class="video-description">Aimbot, Speed, ESP and more</p>
+                            <h4 class="video-title">Roblox Build a Boat Script</h4>
+                            <p class="video-description">Build a Boat Update V2</p>
                         </div>
                     </div>
 
                     <div class="video-container">
                         <div class="video-wrapper">
                             <iframe 
-                                src="https://www.youtube.com/embed/dqiQ7_TjVMw" 
+                                src="https://www.youtube.com/embed/8nOhAlKEx_k" 
                                 title="Advanced Lua Programming" 
                                 frameborder="0" 
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -284,21 +284,65 @@
                     </div>
                 </div>
                 <div class="youtube-cta">
-                    <a href="https://www.youtube.com/@2btr_b4" class="youtube-channel-btn" target="_blank" rel="noopener noreferrer">
+                    <a href="https://youtube.com" class="youtube-channel-btn" target="_blank" rel="noopener noreferrer">
                         <i class="fab fa-youtube"></i>
                         Visit Our YouTube Channel
                     </a>
                 </div>
             </section>
-        </main>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <p>&copy; 2025 Roblox Scripter. All rights reserved.</p>
-            <div class="footer-links">
-                <span class="footer-text">Professional Roblox Development Services</span>
+            <!-- Footer -->
+            <footer class="footer">
+                <p>&copy; 2025 Roblox Scripter. All rights reserved.</p>
+                <div class="footer-links">
+                    <span class="footer-text">Professional Roblox Development Services</span>
+                </div>
+            </footer>
+        </main>
+        </section>
+
+        <!-- MINECRAFT SECTION -->
+        <section class="page-section minecraft-section" id="minecraftSection">
+            <div class="minecraft-fullpage">
+                <div class="minecraft-bg-full"></div>
+                <div class="minecraft-hero">
+                    <h1 class="minecraft-hero-title">2BTR CLIENT</h1>
+                    <p class="minecraft-hero-subtitle">Hacked Client</p>
+                    <div class="minecraft-features">
+                        <div class="mc-feature">
+                            <i class="fas fa-ghost"></i>
+                            <span>GHOST</span>
+                        </div>
+                        <div class="mc-feature">
+                            <i class="fas fa-crosshairs"></i>
+                            <span>COMBAT</span>
+                        </div>
+                        <div class="mc-feature">
+                            <i class="fas fa-eye"></i>
+                            <span>RENDER</span>
+                        </div>
+                        <div class="mc-feature">
+                            <i class="fas fa-running"></i>
+                            <span>MOVEMENT</span>
+                        </div>
+                        <div class="mc-feature">
+                            <i class="fas fa-user"></i>
+                            <span>PLAYER</span>
+                        </div>
+                        <div class="mc-feature">
+                            <i class="fas fa-cog"></i>
+                            <span>MISC</span>
+                        </div>
+                    </div>
+                    <button class="minecraft-download-btn-full" id="minecraftDownloadBtn">
+                        <i class="fas fa-download"></i>
+                        <span class="btn-text">Download Now</span>
+                        <span class="btn-loader"></span>
+                    </button>
+                    <p class="minecraft-note">Join our Discord to get the latest version</p>
+                </div>
             </div>
-        </footer>
+        </section>
     </div>
 
     <!-- Particle Background Effect -->
